@@ -1,0 +1,12 @@
+
+
+path.join will concatenate __dirname which is the directory
+name of the current file *
+
+
+
+path.join returns a normalized path by merging two paths together. It can return an absolute path, but it doesn't necessarily always do so.
+
+path.join('app/libs/oauth', '/../ssl')
+
+resolves to app/libs/ssl

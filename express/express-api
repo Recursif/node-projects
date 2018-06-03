@@ -1,0 +1,36 @@
+
+Events:
+
+app.on('mount', callback(parent))
+The mount event is fired on a sub-app, when it is mounted on a parent app. The parent app is passed to the callback function.
+
+
+Router:
+
+A router object is an isolated instance of middleware and routes.
+
+You can think of it as a "mini-application", capable only of performing middleware and routing functions.
+
+Every Express application has a built in app router.
+
+A router behaves like middleware itself, so you can use it as an argument to app.use() or as the argument to another router's use()
+router.
+
+The top-level express object has a Router() method that creates a new router object.
+
+Middleware tiers Express:
+
+body-parser
+cookie-session
+
+morgan // precédement logger
+
+passport // middleware dédié à l'authentification
+
+serve-index: précédemment express.directory
+
+serve-static: modèle d'utilisation du contenu statique.
+
+2000 Users Express
+
+Gitter

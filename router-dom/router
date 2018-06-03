@@ -1,0 +1,157 @@
+
+# router
+
+Single page applications (SPAs) rewrite sections of a page
+rather than loading entire new pages from a server.
+
+Twitter is a good example of this type of application.
+
+When you click on a tweet only the tweet's info is fetched from the server.
+
+These apps are easy to deploy and greatly improve the user exp, among other advantages.
+
+However, they also bring challenges.
+
+One of them is browser history.
+
+As the application is contained in a single page,
+it cannot rely on the browser's forward/back buttons per se.
+
+It need something that, according to the app state, changes the URL to
+push or replace URL history events within the browser.
+
+At the same time, it also needs to rebuil the application state from information contained within the URL.
+
+This is the job of a router.
+
+A router allows your application to navigate between different components,
+changing the browser URL, modifying the browser history, and keeping the UI state in sync.
+
+React is a popular library for building SPAs. However, as React focuses only on building user interfaces,
+it doesn't have a built-in solution for routing.
+
+React Router is the most popular routing library for React. It allows you define
+routes in the sames declarative style.
+
+<Route path="/home" component={Home} />
+
+
+React Router includes three main packages:
+
+- react-router: the core package for the router
+
+- react-router: it contains the DOM bindings for React Router.
+In other words, the router components for websites.
+
+- react-router-native: It contains the React Native bindings for React Router.
+In other words, the router components for an app using react-native
+
+
+
+# Usage
+
+The React Router API is based on three components:
+- <Router> The router that keeps the UI in sync with the URL.
+
+- <Link> Renders a navigation Link
+
+- <Route> Renders a UI component depending on the URL
+
+## <Router>
+
+Choose a router implementation:
+
+<BrowserRouter>, which uses the HTML5 History API
+
+creates URLs with the following format
+
+http://localhost:3000/route/subroute
+
+
+
+The router can only have one children
+
+
+## <Link>
+
+Let's create a navigation menu
+
+
+
+JSX code:
+<ul>
+  <li> <Link to="/">Home</Link> </li>
+  <li> <Link to="/messages">Messages</Link> </li>
+  <li> <Link to="/about">About</Link> </li>
+</ul>
+
+generate the following HTML:
+<ul>
+  <li> <a href="/">Home</a> </li>
+  <li> <a href="/messages">Messages</a> </li>
+  <li> <a href="/about">About</a> </li>
+</ul>
+
+
+<Link> change the URL without refresh the page
+
+
+## Route
+
+Right now, the URL change but not the UI
+
+
+The matching logic of the <Route> component is delegated to the path to regexp library.
+
+express-route-tester.
+
+use the exact path="/" to avoid multiple rendering
+
+
+
+## Switch
+
+Switch is use if we know that only one path must be rendering at the same time
+
+
+## Redirect
+
+The default behavior can be implemented with a <Redirect> component
+
+
+## Nested routes
+
+A nested route is something like /about/like
+
+Let's say that for the messages section, we want to display a list of messages.
+
+Each one in the form of a link /messages/1, /messages2, and so on, that will lead you to a detail page.
+
+
+To understand how to implement this, you need to know that when a component is rendered by the router, three properties are passed as parameters:
+- match
+- location
+- history
+
+
+When there's a match between the router's path and the URL location,
+a "match" object is created with information about the URL and the path.
+Here are the properties of this object:
+- params: key/value pairs parsed from the URL
+- isExact: bool true if the url match
+- path
+- url
+
+
+## Route properties
+
+- component: To render a component
+- render: A function that returns the element or component to be rendered
+- children: A function that also returns the element or component to be rendered.
+However, the returned element is rendered regardless of whether the path is matched or not.
+
+
+
+# Conclusion
+
+A router keeps your UI and URL in sync.

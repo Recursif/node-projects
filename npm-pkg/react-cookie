@@ -1,0 +1,49 @@
+
+# react-cookie
+
+## <CookiesProvider />
+
+Set the user cookies
+
+On the server, the cookies props must
+be set using req.universalCookies
+or new Cookie(cookieHeader)
+
+
+## withCookies(Component)
+
+Give access to cookies by providing
+it using the cookies prop.
+
+Ex:
+
+export default withCookies(App);
+
+
+
+## Cookies
+
+### get(name, [option])
+
+Get a cookie value
+- name (string) : cookie name
+- option (object)
+
+
+### getAll([option])
+
+Get all cookies
+
+
+### set(name, value)
+
+Set a cookie value
+
+- name (string) : cookie name
+- value (string|object) : save the value and stringify
+the object if needed
+
+
+### remove(name, [option])
+
+Remove a cookie

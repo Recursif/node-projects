@@ -1,0 +1,8 @@
+
+# Cross-env
+
+Run scripts that set and use environment variables across plateforms
+
+cross-env makes it so you can have a single command without worrying about setting
+or using the environment variable properly for the plateform.
+Just set like you would if it's running on POSIX systme and cross-env will tak care of setting properly.

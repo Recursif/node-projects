@@ -1,0 +1,19 @@
+
+# Moment.js
+
+
+Parse, validate, manipulate, and
+display dates and times in Javascript.
+
+Ex:
+moment().format('dddd');
+
+moment("20111031", "YYYYMMDD").fromNow();
+
+moment().subtract(10, 'days').calendar();
+
+
+
+
+
+https://momentjs.com/
