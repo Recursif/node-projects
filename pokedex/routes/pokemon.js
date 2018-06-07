@@ -3,7 +3,11 @@ var router = require('express').Router();
 var pokemon = require('./../models/pokemon')
 
 router.get('/', (req, res) => {
-    pokemon.find({}).populate
+    // populate permet de répérer tout les pokemons plus leurs types associés
+    pokemon.find({}).populate('types')
+    .then(pokemons => {
+        res.render('pokemons/index.html', {pokemons: pokemons})
+    })
 })
 
 module.exports = router
