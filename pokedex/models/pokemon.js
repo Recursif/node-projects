@@ -9,10 +9,11 @@ var pokemonSchema = new mongoose.Schema({
     types: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Type'
+            ref: 'type'
         }
     ]
 })
+
 
 var pokemon = mongoose.model('pokemon', pokemonSchema)
 
