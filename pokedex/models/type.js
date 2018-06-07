@@ -16,6 +16,8 @@ typeSchema.virtual('pokemons', {
     foreignField: 'types'
 })
 
+var type = mongoose.model('type', typeSchema)
+
 
 module.exports = type
 

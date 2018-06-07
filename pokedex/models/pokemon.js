@@ -8,7 +8,7 @@ var pokemonSchema = new mongoose.Schema({
     picture: String,
     types: [
         {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Type'
         }
     ]

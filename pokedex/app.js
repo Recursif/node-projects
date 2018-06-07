@@ -6,8 +6,8 @@ const app = express()
 
 mongoose.connect('mongodb://localhost/pokedex')
 
-require('/models/pokemon')
-require('/models/types')
+require('./models/pokemon.js')
+require('./models/type.js')
 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'))
 
