@@ -11,4 +11,11 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+    pokemon.findById(res.params.id).populate('types').then(pokemon => {
+        res.render('pokemons/show.html', {pokemon: pokemon})
+    },
+    err => res.status(500).send(err))
+})
+
 module.exports = router

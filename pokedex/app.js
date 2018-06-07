@@ -4,7 +4,7 @@ const nunjucks = require('nunjucks')
 
 const app = express()
 
-mongoose.connect('mongodb://localhost/pokedex')
+mongoose.connect('mongodb://localhost:27017/pokedex')
 
 require('./models/pokemon.js')
 require('./models/type.js')
