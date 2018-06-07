@@ -6,7 +6,13 @@ const app = express()
 
 mongoose.connect('mongodb://localhost/pokedex')
 
+require('/models/pokemon')
+require('/models/types')
+
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'))
+
+app.use('/', require('./routes/pokemons'))
+app.use('/types', require('./routes/types'))
 
 
 nunjucks.configure('views', {
@@ -15,10 +21,8 @@ nunjucks.configure('views', {
 })
 
 
-
-
-app.get('/', (res, req) => {
-    res.setEncoding('Hello')
+app.get('/', (req, res) => {
+    res.send('Hello')
 })
 
 app.listen(3000);
