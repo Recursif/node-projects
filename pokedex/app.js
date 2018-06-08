@@ -2,12 +2,14 @@ const mongoose = require('mongoose')
 const express = require('express')
 const nunjucks = require('nunjucks')
 
-const app = express()
+
 
 mongoose.connect('mongodb://localhost:27017/pokedex')
 
-require('./models/pokemon.js')
-require('./models/type.js')
+require('./models/Pokemon.js')
+require('./models/Type.js')
+
+const app = express()
 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'))
 
@@ -20,10 +22,6 @@ nunjucks.configure('views', {
     express: app
 })
 
-
-app.get('/', (req, res) => {
-    res.send('Hello')
-})
 
 app.listen(3000);
 console.log('Pokedex lancé sur le serveur 3000!')

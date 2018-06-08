@@ -12,7 +12,7 @@
             </p>
             <h3>Types :</h3>
             {% for t in pokemon.types %}
-            <span class="label label-default">{{t.name}}</span>
+            <span style="background-color: {{t.color}}" class="label label-default">{{t.name}}</span>
             {% endfor %}
         </div>
     </div>
