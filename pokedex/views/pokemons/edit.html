@@ -5,15 +5,15 @@
     <form method="POST">
         <div class="form-group">
             <label for="name">Nom du pokémon</label>
-            <input type="text" id="name" name="name" class="form-control">
+            <input type="text" id="name" name="name" class="form-control" value="{{pokemon.name}}">
         </div>
         <div class="form-group">
             <label for="number">Numéro</label>
-            <input type="number" id="number" name="number" class="form-control">
+            <input type="number" id="number" name="number" class="form-control" value="{{pokemon.number}}">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description"></textarea>
+            <textarea class="form-control" id="description" name="description">{{pokemon.description}}</textarea>
         </div>
         <div class="form-group">
             <label for="file">Image</label>
