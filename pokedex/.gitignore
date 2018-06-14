@@ -22,7 +22,7 @@ node_modules
 bower_components
 
 # Db directory
-mongo
+mongo/*
 
 # Editors
 .idea

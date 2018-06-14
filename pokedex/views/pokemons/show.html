@@ -6,13 +6,13 @@
             
         </div>
         <div class="col-sm-9">
-            <h2>{{pokemon.name}}<small>Pokemon n°{{</small></h2>
+            <h2>{{pokemon.name}}  <small>Pokemon n°{{pokemon.number}}</small></h2>
             <p class="lead">
                 {{pokemon.description}}
             </p>
             <h3>Types :</h3>
             {% for t in pokemon.types %}
-            <span style="background-color: {{t.color}}" class="label label-default">{{t.name}}</span>
+                <span style="background-color: {{t.color}}" class="label label-default">{{t.name}}</span>
             {% endfor %}
         </div>
     </div>

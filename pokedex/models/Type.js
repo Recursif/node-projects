@@ -5,18 +5,18 @@ var typeSchema = new mongoose.Schema({
     name: String,
     color: {
         type: String,
-        default: 'red'
+        default: "red"
     }
 })
 
 
-typeSchema.virtual('pokemons', {
-    ref: 'Pokemon',
-    localField: '_id',
-    foreignField: 'type'
+typeSchema.virtual("pokemons", {
+    ref: "Pokemon",
+    localField: "_id",
+    foreignField: "type"
 })
 
-var Type = mongoose.model('type', typeSchema)
+var Type = mongoose.model("Type", typeSchema)
 
 
 module.exports = Type
