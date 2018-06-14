@@ -13,7 +13,7 @@
             </p>
             <h3>Types :</h3>
             {% for t in pokemon.types %}
-                <span style="background-color: {{t.color}}" class="label label-default">{{t.name}}</span>
+                <a href="/types/{{t.name}}" style="background-color: {{t.color}}" class="label label-default">{{t.name}}</a>
             {% endfor %}
         </div>
     </div>

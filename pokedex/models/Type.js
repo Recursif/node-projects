@@ -13,7 +13,7 @@ var typeSchema = new mongoose.Schema({
 typeSchema.virtual("pokemons", {
     ref: "Pokemon",
     localField: "_id",
-    foreignField: "type"
+    foreignField: "types"
 })
 
 var Type = mongoose.model("Type", typeSchema)
