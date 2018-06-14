@@ -1,0 +1,10 @@
+
+
+multer est utlisé sans pas de bodyparser
+
+-Formulaire de la gestion des types
+
+- Go to Bootswatch 
+
+- Rajouter un champ icon sur les index.
+
