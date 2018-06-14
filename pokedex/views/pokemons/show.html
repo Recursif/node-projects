@@ -3,10 +3,11 @@
 {% block content %}
     <div class="rom">
         <div class="col-sm-3">
-            
+            <img src="/uploads/{{pokemon.picture}}" alt="{{pokemon.name}}" style="width: 100%">
         </div>
         <div class="col-sm-9">
             <h2>{{pokemon.name}}  <small>Pokemon n°{{pokemon.number}}</small></h2>
+            <a href="/edit/{{pokemon.id}}" class="btn btn-default">Editer</a>
             <p class="lead">
                 {{pokemon.description}}
             </p>
