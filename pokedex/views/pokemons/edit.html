@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Nom du pokémon</label>
+            <input type="text" id="name" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="number">Numéro</label>
+            <input type="number" id="number" name="number" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="file">Image</label>
+            <input type="file" id="file" name="file">
+        </div>
+        
+        <input type="submit" class="btn btn-primary" value="Enregistrer"/>
+    </form>
+{% endblock %}
