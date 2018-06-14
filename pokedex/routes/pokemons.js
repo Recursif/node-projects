@@ -29,12 +29,21 @@ router.get('/edit/:id', (req, res) => {
     })
 })
 
+router.get('/delete/:id', (req, res) => {
+    Pokemon.findOneAndRemove({ _id: req.params.id}).then(() => {
+        res.redirect('/')
+    })
+})
+
+
 router.get('/:id', (req, res) => {
     Pokemon.findById(req.params.id).populate('types').then(pokemon => {
         res.render('pokemons/show.html', { pokemon: pokemon })
     },
     err => res.status(500).send(err))
 })
+
+
 
 router.post('/:id?', (req, res) => {
     new Promise((resolve, reject) => {
