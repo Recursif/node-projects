@@ -11,13 +11,6 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/:id', (req, res) => {
-    Pokemon.findById(req.params.id).populate('types').then(pokemon => {
-        res.render('pokemons/show.html', { pokemon: pokemon })
-    },
-    err => res.status(500).send(err))
-})
-
 router.get('/new', (req, res) => {
     var pokemon = new Pokemon()
     res.render('pokemons/edit.html', { pokemon: pokemon })
@@ -29,5 +22,14 @@ router.get('/edit/:id', (req, res) => {
         res.render('pokemons/edit.html', { pokemon: pokemon })
     })
 })
+
+router.get('/:id', (req, res) => {
+    Pokemon.findById(req.params.id).populate('types').then(pokemon => {
+        res.render('pokemons/show.html', { pokemon: pokemon })
+    },
+    err => res.status(500).send(err))
+})
+
+
 
 module.exports = router

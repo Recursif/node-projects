@@ -19,7 +19,12 @@
             <label for="file">Image</label>
             <input type="file" id="file" name="file">
         </div>
-        
+        {% for type in types %}
+            <label>
+                <input type="checkbox" name="types[]" value"{{type.name}}">
+                {{type.name}}
+            </label>
+        {% endfor %}
         <input type="submit" class="btn btn-primary" value="Enregistrer"/>
     </form>
 {% endblock %}
