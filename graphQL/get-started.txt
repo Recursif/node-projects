@@ -1,0 +1,29 @@
+
+## GraphQL / Javascipt 
+
+GraphQL.js 
+
+The reference implementation of the GraphQL specification,
+designed for running GraphQL 
+in a Node.JS environment.
+
+To run a GraphQL.js hello world script from the command line:
+
+npm install graphql
+
+Then run node hello.js with this code in hello.js 
+
+var { graph, buildSchema } = require('graphql')
+
+var schema = buildSchema(`
+    type Query {
+        hello: String
+    }
+`)
+
+var root = { hello: ()} => 'Hello world!' }
+
+graphql(schema, '{ hello }', root).then((response) => {
+    console.log(response)
+})
+
