@@ -7,6 +7,6 @@ http.get(process.argv[2], function (response) {
 		data = data.toString();
 		console.log(data.length)
 		console.log(data)
-		}))
+	}))
 })
 

@@ -25,7 +25,7 @@ function get(url, index) {
 	});
 }
 
-function print_index(index) {*
+function print_index(index) {
 	//console.log(index)
 }
 

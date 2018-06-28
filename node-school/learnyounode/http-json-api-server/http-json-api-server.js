@@ -5,9 +5,11 @@ const server = http.createServer(function (req, res) {
 	let result;	
 	if (url.parse(req.url).pathname == '/api/parsetime') {
 		const date = new Date(url.parse(req.url).query.slice(4));
-		result = JSON.stringify({hour: date.getHours(),
-									minute: date.getMinutes(),
-									second: date.getSeconds()})
+		result = JSON.stringify({
+			hour: date.getHours(),
+			minute: date.getMinutes(),
+			second: date.getSeconds()
+		})
 	}
 	if (url.parse(req.url).pathname == '/api/unixtime') {
 		const date = url.parse(req.url).query.slice(4);
