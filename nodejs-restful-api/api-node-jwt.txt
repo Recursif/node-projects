@@ -1,0 +1,75 @@
+
+# API auth with JWT
+
+## Securing Node.js RESTful APIs with JSON Web Tokens 
+
+It’s a way of encrypting a value, in turn creating a unique token that users use as an identifier. 
+
+This token verifies your identity.
+
+JSON Web Token (JWT) is a compact,
+URL safe means of representing claims to be transferred between two parties.
+
+The Claims in a JWT are encoded as a JSON object 
+that is used as the payload of a JSON Web Signature (JWD)
+sctructure or as the plaintext of a JSON Web Encryption (JWE)
+sctructure, enabling the claims to be digitally signed 
+or integrity protected with a Message Authentification Code 
+(MAC) and or encrypted.
+
+Internet Engineering Task Force (IETF)
+
+
+A JWT is an encoded string of characters which is safe to send between two computers if they both have HTTPS. 
+
+The token represents a value that is accessible only by the computer that has access to the secret key with which it was encrypted. 
+
+Let’s say a user wants to sign in to their account. They send a request with the required credentials such as email and password to the server. 
+
+The server checks to see if the credentials are valid. If they are, the server creates a token using the desired payload and a secret key.
+
+This string of characters that results from the encryption is called a token
+
+Then the server sends it back to the client.
+
+The client, in turn, saves the token to use it in every other request the user will send. 
+
+The practice of adding a token to the request headers is as way of authorizing the user to access resources.
+
+This is a practical example of how JWT works.
+
+
+git clone https://github.com/adnanrahic/nodejs-restful-api.git
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://wally:theflashisawesome@ds147072.mlab.com:47072/securing-rest-apis-with-jwt', { useMongoClient: true });
+
+Start out by adding a new file in the root directory of the project. 
+
+
+Never do this:
+
+// config.js
+module.exports = {
+  'secret': 'supersecret'
+};
+
+
+Create the Auth controller
+
+and then add the modules for using 
+JSON Web Tokens and encrypting passwords.
+
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
+const config = require('../config')
+
+
+npm install jsonwebtoken --save
+npm install bcryptjs --save
+
+
+# Login 
+
+
+
