@@ -1,0 +1,109 @@
+
+# recherche approximative (fuzzy search)
+
+En info, la recherche approximative 
+ou recherche floue est le problème 
+qui consiste à trouver des chaînes 
+de caractères qui corrsepondent à 
+un motif approximatif plutot qu'à 
+une correspondance exacte.
+
+Le problème de recherche approximative est 
+généralement divisé en 2 sous problèmes:
+trouver des correspondances de sous-chaines 
+approximatives dans une chaîne donnée 
+et trouver des entrées de dictionnaire qui 
+correspondent approximativement au motif.
+
+## Distances entre mots 
+
+La proximité entre deux chaînes est mesurée 
+par le nombre d'opérations primitives nécessaires 
+pour transformer la chaîne d'entrée E en chaîne 
+d'arrivée E'.
+
+Cette valeur est appelée la distance d'édition 
+(ou distance de Levenshtein) entre la 
+chaîne et le motif.
+
+Les opérations primitives sont:
+
+l'insertion: cou -> coup
+la suppression: coup -> cou 
+la substitution: coup -> cout 
+
+Ces trois opérations peuvent être généralisées comme des formes de substitution en ajoutant un caractère NULL, ici représenté par l'astérisque, quand un caractère a été inséré ou supprimé :
+
+l'insertion : cou* → coup ;
+la suppression : coup → cou* ;
+la substitution: coup → cout.
+
+Certains moteurs d'approximation traitent également la transposition,
+c.-à-d. l'échange de deux lettres dans la chaîne,
+comme une opération primitive.
+
+Par exemple, cout → touc est une transposition.
+
+Différents moteurs d'approximation imposent différentes 
+contraintes.
+
+Certains utilisent un coût unique 
+global non pondéré, cad le nombre total 
+d'opérations primitives nécessaires pour 
+convertir une correspondance vers le motif.
+
+
+Par exemple, si le motif est « cout », le terme « tout » diffère par une substitution,
+« couts » par une insertion, « cou » par une suppression et « fou » par une substitution
+et une suppression.
+
+Si toutes les opérations ont un coût de 1
+et que la contrainte est définie à 1,
+alors « tout », « couts », « cou » sont des correspondances valides
+tandis que « fou » sera rejeté.
+
+Certains moteurs d'approximation comptabilisent séparément
+le nombre d'opérations de chaque type,
+d'autres définissent un coût total mais utilisent
+différentes pondérations pour chaque opération.
+
+Il est également possible de fixer des contraintes
+et des pondérations à différents groupes dans le motif.
+
+Une autre mesure de similarité est la distance de Jaro-Winkler.
+
+Distance de Jaro-Winkler
+https://fr.wikipedia.org/wiki/Distance_de_Jaro-Winkler
+
+
+## Problème algorithmique 
+
+Une fois la distance fixée, les deux problèmes 
+algorithmiques classiques sont les suivants.
+
+Etant donné un long texte, un motif et un entier k,
+trouver les positions du textes où le motif est 
+approximativement présent, cad que le texte contient 
+une chaîne à distance au plus k du motif recherché.
+
+Etant donné une chaine de caractère et un dictionnaire, trouver une chaîne 
+du dictionnaire qui minimise la distance au mot donné en entrée.
+
+
+## Applications 
+
+L'applicationla plus courante de la recherche approximative était jusqu'à récemment les correcteurs orthographiques.
+
+Avec la mise à disposition de larges jeux de données sur l'ADN, la recherche de séquence de nucléotides est devenue une application importante.
+
+C'est également une méthode utilisée dans la lutte anti-spam. 
+
+Cette méthode n'est cependant pas adaptée aux données binaires (p. ex. images ou la musique), qui nécessitent des approches différentes telles que les algorithmes d'empreinte acoustique.
+
+
+
+
+
+
+
+
