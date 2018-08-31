@@ -1,4 +1,0 @@
-
-# Highland 
-
-Add lodash to stream
